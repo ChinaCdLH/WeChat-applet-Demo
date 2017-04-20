@@ -1,0 +1,80 @@
+<!--header-->
+<view class="container">
+  <view class="head">
+    <view class="head-l">
+    <text>热点</text>
+    </view>
+    <image class='cover-l' mode='widthFix' src="../../images/index/head-l.png">
+      </image>
+      <view class="head-r">
+        <text>关注</text>
+      </view>
+  </view>
+  <view class="nav">
+
+    <view bindtap="handleChange" class="col-nav  {{navIndex==0?'nav-active':''}}" data-index='0'>
+      <text>足球现场</text>
+    </view>
+    <view bindtap="handleChange" class="col-nav  {{navIndex==1?'nav-active':''}}" data-index='1'>
+      <text>足球生活</text>
+    </view>
+    <view bindtap="handleChange" class="col-nav  {{navIndex==2?'nav-active':''}}" data-index='2'>
+      <text>足球美女</text>
+    </view>
+  </view>
+
+  <view class="main-content">
+    <swiper bindchange='swiperChange' current='{{navIndex}}'>
+    <!--足球现场-->
+      <block >
+        <swiper-item style="overflow-y:scroll">
+          <scroll-view scroll-y='true' bindscrolltolower='bottomChange' bindscrolltoupper='topChange'>
+          <view class="main-contanier" wx:for='{{list}}' wx:key="{{idx}}">
+            <image mode='widthFix' class='main-img' src="{{item.src}}"></image>
+            <text class='main-tip'>{{item.tip}}</text>
+          </view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+      <!--足球生活-->
+       <block >
+        <swiper-item style="overflow-y:scroll">
+          <scroll-view scroll-y='true' bindscrolltolower='bottomChange' bindscrolltoupper='topChange'>
+          <view class="main-contanier" wx:for='{{list}}' wx:key="{{idx}}">
+            <image mode='widthFix' class='main-img' src="{{item.src}}"></image>
+            <text class='main-tip'>{{item.tip}}</text>
+          </view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+      <!--足球美女-->
+      <block >
+        <swiper-item style="overflow-y:scroll">
+          <scroll-view scroll-y='true' bindscrolltolower='bottomChange' bindscrolltoupper='topChange'>
+          <view class="main-contanier" wx:for='{{list}}' wx:key="{{idx}}">
+            <image mode='widthFix' class='main-img' src="{{item.src}}"></image>
+            <text class='main-tip'>{{item.tip}}</text>
+          </view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+  </view>
+
+
+
+  <view class="footer">
+        <view class='light col-foot'><i class='iconfont icon-shouye-shouye'></i><text>首页</text></view>
+        
+        <view class='click col-foot'><i class='iconfont icon-fangdajing'></i><text>发现</text></view>
+        <view class="col-foot"></view>
+        <view><div class='canmera col-foot'><i class='iconfont icon-zhaoxiangji'></i></div></view>
+        
+        <view class='click col-foot'><i class='iconfont icon-wode'></i><text>我的</text></view>
+        
+        <view class='col-foot'><i class='iconfont icon-tuichu'></i><text>退出</text></view>
+
+  </view>
+
+</view>
